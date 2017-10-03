@@ -261,6 +261,9 @@ int main(int argc, char* argv[])
                     case SDLK_z: g_workspace.scale = (g_workspace.scale << 1) & 255; if (g_workspace.scale==0) g_workspace.scale=1; break;
                     case SDLK_p: g_workspace.mode = PREVIEW;break;
                     case SDLK_e: g_workspace.mode = EDIT;break;      
+                    case SDLK_c: g_workspace.cursor_color.r = g_workspace.cursor_color.r++%256;break;
+                    case SDLK_v: g_workspace.cursor_color.g = g_workspace.cursor_color.g++%256;break;
+                    case SDLK_b: g_workspace.cursor_color.b = g_workspace.cursor_color.b++%256;break;
                     default:
                         printf("Unhandled key : %d\n",event.key.keysym.sym);
                         int key = -1;
